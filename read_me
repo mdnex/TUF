@@ -1,0 +1,5 @@
+developed as a school project, using django.
+
+The projects manages a fleet of vehicles, their routes, schedules, breakdown and drivers.
+
+after running the server access http://127.0.0.1:800/sign_in

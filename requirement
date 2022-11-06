@@ -1,0 +1,5 @@
+Django==2.2.3
+django-bootstrap3==11.0.0
+reportlab==3.5.21
+xhtml2pdf==0.2.3
+simplejson==3.16.0
