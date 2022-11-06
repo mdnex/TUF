@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} - {{title}} Autocarro{% endblock %}
+
+{% block menu %}
+<div class="col-sm-6">
+    <div class="breadcrumbs-area clearfix">
+        <h4 class="page-title pull-left">Home</h4>
+        <ul class="breadcrumbs pull-left">
+            <li><a href="{% url 'main:index' %}">Home</a></li>
+            <li><span>{{title}} Autocarro</span></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="main-content-inner">
+  <div class="row">
+      <!-- basic form start -->
+      <div class="col-12 mt-5">
+          <div class="card">
+              <div class="card-body">
+                  <h4 class="header-title">Preencha o formulário</h4>
+                  <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form.visible_fields %}
+                    <div class="form-group">
+                        <label for="">{{field.label}}</label>
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Salvar</button>
+                    <button type="reset" class="btn btn-default mt-4 pr-4 pl-4">limpar</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <!-- basic form end -->
+  </div>
+</div>
+{% endblock %}
